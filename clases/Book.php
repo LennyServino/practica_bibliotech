@@ -4,17 +4,17 @@ class Book{
     private $isbn;
     private $title;
     private $year_publication;
-    private $id_category;
-    private $id_author;
+    private Category $category;
+    private Author $author;
     private $status;
 
-    public function __construct($id_book, $isbn, $title, $year_publication, $id_category, $id_author, $status){
+    public function __construct($id_book, $isbn, $title, $year_publication, Category $category, Author $author, $status) {
         $this->id_book = $id_book;
         $this->isbn = $isbn;
         $this->title = $title;
         $this->year_publication = $year_publication;
-        $this->id_category = $id_category;
-        $this->id_author = $id_author;
+        $this->category = $category;
+        $this->author = $author;
         $this->status = $status;
     }
 
@@ -24,8 +24,8 @@ class Book{
             'isbn' => $this->isbn,
             'title' => $this->title,
             'year_publication' => $this->year_publication,
-            'id_category' => $this->id_category,
-            'id_author' => $this->id_author,
+            'id_category' => $this->category->getName(),
+            'id_author' => $this->author->getDetails(),
             'status' => $this->status
         );
     }

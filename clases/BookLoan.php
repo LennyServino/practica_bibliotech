@@ -7,7 +7,7 @@ class BookLoanManager{
     private $name_client;
     private $number_id_client;
 
-    public function registerLoan($id_book_loan, $date_loan, $date_devolution, $book, $name_client, $number_id_client){
+    public function registerLoan($id_book_loan, $date_loan, $date_devolution, Book $book, $name_client, $number_id_client){
         $this->id_book_loan = $id_book_loan;
         $this->date_loan = $date_loan;
         $this->date_devolution = $date_devolution;
